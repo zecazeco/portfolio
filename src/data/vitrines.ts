@@ -18,7 +18,7 @@ export const vitrines: Vitrine[] = [
     label: "Geral",
     title: "Creative Developer",
     intro:
-      "Desenvolvo experiências interativas desde 2005 — hoje, principalmente em realidade aumentada, realidade virtual e 3D na web.",
+      "Desenvolvedor criativo trabalhando com tecnologia desde 2005. Crio experiências interativas para web, realidade aumentada e realidade virtual, com Three.js, 8th Wall, Unity e shaders, para marcas como Netflix, TikTok, Formula E e Walmart.",
     areas: ["xr", "web3d", "frontend", "games", "visuals"],
     order: ["meta-xr-hackathon-2021", "webar-3d", "filtros-ar-marcas", "vr-meta-quest", "word-fleet", "guided-by-nothing"],
   },
@@ -26,7 +26,8 @@ export const vitrines: Vitrine[] = [
     slug: "xr",
     label: "XR & Games",
     title: "XR & Unity Developer",
-    intro: "Filtros de AR, WebAR, VR para Meta Quest e jogos em Unity.",
+    intro:
+      "Desenvolvo realidade aumentada e virtual desde 2020: filtros para Instagram, TikTok e Snapchat, WebAR com 8th Wall e VR para Meta Quest em Unity, para marcas como TikTok, Netflix, Vivo e John Deere. Também crio jogos no meu estúdio, a Vangrog.",
     areas: ["xr", "web3d", "games"],
     order: ["meta-xr-hackathon-2021", "vr-meta-quest", "filtros-ar-marcas", "webar-3d", "guided-by-nothing"],
   },
@@ -34,7 +35,8 @@ export const vitrines: Vitrine[] = [
     slug: "frontend",
     label: "Front-end",
     title: "Front-end Developer",
-    intro: "Aplicações web em Vue e Angular em produção, React e TypeScript em projetos próprios, e 3D no navegador.",
+    intro:
+      "Desenvolvo para a web desde 2005, do Flash ao front-end atual. Tenho aplicações em produção em Vue e Angular, entre elas um app de vendas em uso desde 2021 sem precisar de manutenção, e uso React, TypeScript e Three.js em projetos próprios.",
     areas: ["frontend", "web3d"],
     order: ["word-fleet", "webar-3d", "app-controle-de-vendas", "portfolio"],
   },

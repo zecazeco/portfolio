@@ -11,7 +11,6 @@ export function VitrinePage({ vitrine }: { vitrine: Vitrine }) {
       <SiteHeader active={vitrine.slug} />
       <main className="container">
         <section className="hero">
-          <p className="eyebrow">{profile.name}</p>
           <h1>{vitrine.title}</h1>
           <p className="lead">{vitrine.intro}</p>
           <p>
