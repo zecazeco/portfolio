@@ -1,5 +1,6 @@
 import { profile } from "@/data/profile";
 import { projectsFor, type Vitrine } from "@/data/vitrines";
+import { HeroScene } from "./hero/HeroScene";
 import { ProjectCard } from "./ProjectCard";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -11,16 +12,19 @@ export function VitrinePage({ vitrine }: { vitrine: Vitrine }) {
       <SiteHeader active={vitrine.slug} />
       <main className="container">
         <section className="hero">
-          <h1>{vitrine.title}</h1>
-          <p className="lead">{vitrine.intro}</p>
-          <p>
-            <a className="btn btn-primary" href="#projetos">
-              Ver projetos
-            </a>
-            <a className="btn" href="#contato">
-              Contato
-            </a>
-          </p>
+          <HeroScene />
+          <div className="hero-text">
+            <h1>{vitrine.title}</h1>
+            <p className="lead">{vitrine.intro}</p>
+            <p>
+              <a className="btn btn-primary" href="#projetos">
+                Ver projetos
+              </a>
+              <a className="btn" href="#contato">
+                Contato
+              </a>
+            </p>
+          </div>
         </section>
 
         <section id="projetos">
