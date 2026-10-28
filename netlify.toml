@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# The site is built with basePath /jlhaas, but the export lives at the root of "out".
+# vangrog.com proxies /jlhaas/* to /:splat here; this rule makes the .netlify.app URL work too.
+[[redirects]]
+  from = "/jlhaas/*"
+  to = "/:splat"
+  status = 200
+
+# Portfolio is not indexed (same rule as vangrog.com/jlhaas)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
