@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Portfólio de José Luís Haas: realidade aumentada, realidade virtual, 3D na web, front-end e jogos.",
   // Not indexed: also sent as X-Robots-Tag by Netlify
   robots: { index: false, follow: false, nocache: true },
-  icons: { icon: "/jlhaas/favicon-32x32.png" },
+  icons: { icon: { url: "/jlhaas/icon.svg", type: "image/svg+xml" } },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
