@@ -20,7 +20,7 @@ export const vitrines: Vitrine[] = [
     intro:
       "Desenvolvedor criativo trabalhando com tecnologia desde 2005. Crio experiências interativas para web, realidade aumentada e realidade virtual, com Three.js, 8th Wall, Unity e shaders, para marcas como Netflix, TikTok, Formula E e Walmart.",
     areas: ["xr", "web3d", "frontend", "games", "visuals"],
-    order: ["meta-xr-hackathon-2021", "webar-3d", "filtros-ar-marcas", "vr-meta-quest", "word-fleet", "guided-by-nothing"],
+    order: ["meta-xr-hackathon-2021", "meta-storytelling-ar-2023", "word-fleet", "guided-by-nothing"],
   },
   {
     slug: "xr",
@@ -29,7 +29,7 @@ export const vitrines: Vitrine[] = [
     intro:
       "Desenvolvo realidade aumentada e virtual desde 2020: filtros para Instagram, TikTok e Snapchat, WebAR com 8th Wall e VR para Meta Quest em Unity, para marcas como TikTok, Netflix, Vivo e John Deere. Também crio jogos no meu estúdio, a VanGrog.",
     areas: ["xr", "web3d", "games"],
-    order: ["meta-xr-hackathon-2021", "vr-meta-quest", "filtros-ar-marcas", "webar-3d", "guided-by-nothing"],
+    order: ["meta-xr-hackathon-2021", "meta-storytelling-ar-2023", "guided-by-nothing"],
   },
   {
     slug: "frontend",
@@ -38,7 +38,7 @@ export const vitrines: Vitrine[] = [
     intro:
       "Desenvolvo para a web desde 2005, do Flash ao front-end atual. Tenho aplicações em produção em Vue e Angular, entre elas um app de vendas em uso desde 2021 sem precisar de manutenção, e uso React, TypeScript e Three.js em projetos próprios.",
     areas: ["frontend", "web3d"],
-    order: ["word-fleet", "webar-3d", "app-controle-de-vendas", "portfolio"],
+    order: ["word-fleet", "app-controle-de-vendas", "portfolio"],
   },
 ];
 

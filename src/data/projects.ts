@@ -5,10 +5,13 @@
 export type Area = "xr" | "web3d" | "frontend" | "games" | "visuals";
 
 export type CaseStudy = {
+  /** Para projetos próprios, que nascem de uma ideia e não de um problema */
+  ideia?: string;
   contexto?: string;
   papel?: string;
   desafio?: string;
   solucao?: string;
+  comoFunciona?: string;
   resultado?: string;
 };
 
@@ -34,70 +37,58 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "meta-xr-hackathon-2021",
-    title: "Filtro vencedor do Meta XR Hackathon",
-    summary: "Melhor filtro de realidade aumentada da América Latina no Meta XR Hackathon 2021.",
+    title: "BoDyGame",
+    summary: "Jogo de dança em realidade aumentada, controlado pelo corpo. Vencedor do Meta XR Hackathon 2021.",
     year: "2021",
     areas: ["xr"],
     stack: ["Meta Spark AR"],
     badge: "Vencedor · América Latina",
-    // TODO: nome do filtro, vídeo e estudo de caso
+    caseStudy: {
+      contexto:
+        "O Meta XR Hackathon desafiou criadores do mundo todo a usar a ferramenta de realidade aumentada da Meta para criar experiências imersivas e efeitos interativos. O BoDyGame concorreu na trilha de Hand & Body Tracking, voltada a experiências controladas só pelos movimentos do corpo ou pelos gestos das mãos.",
+      solucao:
+        "Um jogo de dança em que cada passo é uma pose definida por pontos na tela. Para pontuar, o jogador se move até que os pontos do corpo rastreados pela câmera coincidam com os da pose.",
+      resultado: "Vencedor do hackathon, eleito o melhor filtro de realidade aumentada da América Latina.",
+    },
+    links: [
+      { label: "Instagram", href: "https://www.instagram.com/zeco.lab/" },
+    ], 
   },
   {
     slug: "meta-storytelling-ar-2023",
-    title: "Meta Storytelling with AR Hackathon",
-    summary: "2º lugar geral no hackathon de narrativas em realidade aumentada da Meta.",
+    title: "Reality Explorer",
+    summary: "Efeito de AR narrativo em que um robô mostra a pessoa em realidades paralelas. 2º lugar geral no Meta Storytelling with AR Hackathon 2023.",
     year: "2023",
     areas: ["xr"],
-    stack: ["Realidade aumentada"], // TODO: confirmar ferramenta
+    stack: ["Meta Spark AR"],
     badge: "2º lugar geral",
-  },
-  {
-    slug: "filtros-ar-marcas",
-    title: "Filtros de AR para marcas",
-    summary: "Filtros para Instagram, TikTok e Snapchat, com shaders customizados, desenvolvidos pela Govak Reality.",
-    year: "2023–2026",
-    areas: ["xr"],
-    stack: ["Effect House", "Lens Studio", "Meta Spark AR", "Shaders", "JavaScript"],
-    clients: [
-      "TikTok UK",
-      "Netflix UK",
-      "Pinterest UK",
-      "LV= Insurance",
-      "King's Cross",
-      "Financial Conduct Authority",
-      "Brooks Running",
-      "Sicredi",
-    ],
-    nda: true, // alguns projetos têm NDA; os liberados podem ganhar página própria
-  },
-  {
-    slug: "webar-3d",
-    title: "WebAR e 3D na web",
-    summary: "Experiências de realidade aumentada e 3D no navegador, desenvolvidas pela Govak Reality.",
-    year: "2023–2026",
-    areas: ["web3d", "xr", "frontend"],
-    stack: ["Three.js", "8th Wall", "JavaScript"],
-    clients: ["Formula E", "Walmart", "Petition for Rehab"],
-    nda: true,
-  },
-  {
-    slug: "vr-meta-quest",
-    title: "Aplicações de VR para Meta Quest",
-    summary: "Experiências de realidade virtual em Unity, desenvolvidas pela Govak Reality.",
-    year: "2023–2026",
-    areas: ["xr"],
-    stack: ["Unity", "C#", "Meta Quest"],
-    clients: ["Vivo", "John Deere", "Ancap (Uruguai)"],
-    nda: true,
+    caseStudy: {
+      contexto:
+        "Desafio de efeitos de AR narrativos, realizado em 2023 pela Lenslist com a Meta Spark: contar uma história completa no Meta Spark, com objetos 3D interativos e pelo menos três cenas.",
+      papel:
+        "Efeito criado em parceria com @sarahramos.ar, responsável pelo 3D e pela narração. Fiquei com a programação, a lógica, os shaders e a arquitetura do efeito.",
+      solucao:
+        "Um robô que mostra à pessoa como seriam as realidades paralelas dela: uma TV exibe mundos diferentes, todos com o rosto de quem está usando o efeito.",
+      resultado: "2º lugar geral no hackathon.",
+    },
+    links: [
+      { label: "Instagram", href: "https://www.instagram.com/zeco.lab/" },
+    ],    
   },
   {
     slug: "word-fleet",
     title: "Word Fleet",
-    summary: "Batalha naval encontra Wordle: multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
+    summary: "Batalha naval encontra Wordle: game multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
     year: "2026",
     areas: ["games", "frontend"],
-    stack: ["Vue"], // TODO: completar (backend do multiplayer)
+    stack: ["Vue", "Firebase"], 
     badge: "Beta",
+    caseStudy: {
+      ideia:
+        "Planejei e comecei o Word Fleet há dois anos, para testar a sincronização em tempo real do Firestore do Firebase. Agora, com a ajuda de IA, terminei o jogo e lancei pela VanGrog, o meu estúdio independente.",
+      comoFunciona:
+        "Cada jogador esconde três palavras secretas, de 3, 4 e 5 letras, num tabuleiro de 10×10. Na sua vez, escolhe uma casa e uma letra, e a cor da resposta (verde, amarelo, roxo ou cinza) serve de pista. Vence quem encontrar primeiro as 12 letras do adversário. Não há servidor nem funções na nuvem: os dois navegadores sincronizam a partida direto pelo Firestore, e para convidar alguém basta mandar o link, sem criar conta.",
+    },
     links: [
       { label: "Jogar", href: "https://wordfleet.vangrog.com/" },
       { label: "Página do jogo", href: "https://vangrog.com/games/word-fleet/" },
@@ -111,6 +102,10 @@ export const projects: Project[] = [
     areas: ["games", "xr"],
     stack: ["Unity", "C#"],
     badge: "Em desenvolvimento",
+    caseStudy: {
+      ideia:
+        "Um jogo sobre caminhar e lembrar. O jogador é um viajante solitário que atravessa um mundo silencioso, guiado só pelo rumo e pelas próprias sensações, sem mapa e sem destino final.",
+    },
     links: [{ label: "Página do jogo", href: "https://vangrog.com/games/guided-by-nothing/" }],
   },
   {
@@ -133,16 +128,7 @@ export const projects: Project[] = [
     year: "2021",
     areas: ["frontend"],
     stack: ["Angular", "Ionic", "Firebase"],
-  },
-  {
-    slug: "spark-ar-open-source",
-    title: "Scripts open source de Spark AR",
-    summary: "Scripts e patches reutilizáveis para criadores de filtros no Meta Spark AR.",
-    year: "2020–2022",
-    areas: ["xr"],
-    stack: ["Meta Spark AR", "JavaScript"],
-    badge: "Open source",
-    links: [{ label: "GitHub", href: "https://github.com/zecazeco" }],
+    nda: true,
   },
   {
     slug: "portfolio",

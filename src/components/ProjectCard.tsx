@@ -25,10 +25,18 @@ export function ProjectCard({ project }: { project: Project }) {
 }
 
 export function Cover({ project }: { project: Project }) {
-  // NDA projects never show images; projects without a cover get a placeholder.
+  // NDA projects never show images: same graph paper with an NDA tag in the middle
+  if (project.nda) {
+    return (
+      <div className="cover cover-placeholder cover-nda" aria-hidden="true">
+        <span>NDA</span>
+      </div>
+    );
+  }
+  // Projects without a cover get a placeholder.
   // Read on every render so a new media folder shows up without restarting the dev server.
   const { cover } = projectMedia(project.slug);
-  if (cover && !project.nda) {
+  if (cover) {
     return <img className="cover" src={`/jlhaas${cover}`} width={1280} height={720} alt="" loading="lazy" />;
   }
   return (

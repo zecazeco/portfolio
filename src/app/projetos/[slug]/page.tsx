@@ -42,10 +42,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const sections: { key: keyof CaseStudy; label: string }[] = [
+  { key: "ideia", label: "A ideia" },
   { key: "contexto", label: "Contexto" },
   { key: "papel", label: "Meu papel" },
   { key: "desafio", label: "Desafio" },
   { key: "solucao", label: "Solução" },
+  { key: "comoFunciona", label: "Como funciona" },
   { key: "resultado", label: "Resultado" },
 ];
 
@@ -70,7 +72,7 @@ export default async function ProjectPage({ params }: Props) {
         <h1>{project.title}</h1>
         <p className="lead">{project.summary}</p>
 
-        {!project.nda && <Cover project={project} />}
+        <Cover project={project} />
         {project.nda && (
           <p className="note">Projeto sob acordo de confidencialidade: descrito só em texto, sem imagens.</p>
         )}
