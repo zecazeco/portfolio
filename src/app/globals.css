@@ -130,46 +130,39 @@ section {
 	text-underline-offset: 6px;
 }
 
-/* Hero: text on top, Three.js blob tracking behind it (components/hero) */
+/* Hero: a contour-line shader behind the text (components/hero), strongest on the right */
 .hero {
 	position: relative;
-	padding: 280px 0 48px;
+	isolation: isolate;
+	padding: 80px 0 48px;
 }
 
-.hero-text {
-	position: relative;
-}
-
-.hero-scene {
+.hero-field {
 	position: absolute;
 	inset: 0;
-	opacity: 0;
-	transition: opacity .8s ease;
+	z-index: -1;
 	pointer-events: none;
+	opacity: 0;
+	transition: opacity 1.2s ease;
+	/* Faint behind the text, fading out at every edge */
+	-webkit-mask-image:
+		linear-gradient(to right, transparent, rgba(0, 0, 0, .35) 30%, #000 60%, #000 85%, transparent),
+		linear-gradient(transparent, #000 20%, #000 75%, transparent);
+	-webkit-mask-composite: source-in;
+	mask-image:
+		linear-gradient(to right, transparent, rgba(0, 0, 0, .35) 30%, #000 60%, #000 85%, transparent),
+		linear-gradient(transparent, #000 20%, #000 75%, transparent);
+	mask-composite: intersect;
 }
 
-.hero-scene.is-ready {
+.hero-field.is-ready {
 	opacity: 1;
 }
 
-.hero-canvas,
-.hero-canvas canvas {
+.hero-field canvas {
+	display: block;
 	width: 100%;
 	height: 100%;
-	display: block;
-}
-
-@media (min-width: 768px) {
-	.hero {
-		min-height: 520px;
-		display: flex;
-		align-items: center;
-		padding: 64px 0;
-	}
-
-	.hero-text {
-		max-width: 50%;
-	}
 }
 
 .hero h1 {
