@@ -116,27 +116,45 @@ export const projects: Project[] = [
     areas: ["games", "frontend"],
     stack: ["JavaScript", "HTML/CSS"],
     badge: "Open source",
+    caseStudy: {
+      ideia:
+        "Aventura solo em texto escrita em 1999, quando eu tinha 14 anos, e publicada sem edições. Por trás do jogo há um sistema simples e de código aberto, feito só com HTML, CSS e JavaScript. Basta copiar o projeto e escrever suas cenas e escolhas em um único arquivo.",
+    },    
     links: [
       { label: "Página do jogo", href: "https://vangrog.com/games/jovem-guerreiro/" },
       { label: "GitHub", href: "https://github.com/zecazeco/aventura-solo-jovem-guerreiro" },
+      { label: "Jogar", href: "https://zecazeco.github.io/aventura-solo-jovem-guerreiro/" },
     ],
   },
   {
     slug: "app-controle-de-vendas",
     title: "App de controle de vendas",
-    summary: "App Android para o caixa de uma padaria, em uso diário desde 2021 sem precisar de manutenção.",
+    summary: "App Android de controle de caixa para uma padaria, em uso diário desde 2021 sem precisar de manutenção.",
     year: "2021",
     areas: ["frontend"],
     stack: ["Angular", "Ionic", "Firebase"],
     nda: true,
+    caseStudy: {
+      contexto:
+        "Uma padaria precisava de um registro simples do caixa: quanto entrava a cada dia e quanto saía em pagamentos a fornecedores.",
+      solucao:
+        "Um app Android, feito em Angular e Ionic, em que os operadores lançam as entradas do caixa e as compras de produtos. Os lançamentos ficam salvos no Firebase, e o dono passa a ter um histórico de todo o movimento.",
+      resultado: "Em uso diário desde 2021, sem precisar de manutenção.",
+    },
   },
   {
     slug: "portfolio",
     title: "Este portfólio",
-    summary: "Site estático em Next.js com um banco único de projetos e uma vitrine para cada área.",
+    summary: "Site estático em Next.js com um banco único de projetos, uma vitrine para cada área e um shader de curvas de nível no topo.",
     year: "2026",
     areas: ["frontend"],
-    stack: ["Next.js", "React", "TypeScript"],
+    stack: ["Next.js", "React", "TypeScript", "Three.js"],
+    caseStudy: {
+      ideia:
+        "Um portfólio que se adapta à vaga. Cada projeto é cadastrado uma vez, com as áreas a que pertence, e aparece nas vitrines certas: geral, XR & Games e Front-end. Assim cada vaga recebe um link focado no que importa para ela. Desenvolvido com apoio de IA, com a arquitetura e as decisões de design definidas por mim.",
+      comoFunciona:
+        "O site é gerado como HTML estático em Next.js e TypeScript e publicado na Netlify, em vangrog.com/jlhaas. No topo, um shader em Three.js desenha curvas de nível que se curvam em volta do mouse. Ele roda a no máximo 30 fps, só enquanto está visível na tela, e mostra um quadro parado em celulares ou para quem prefere menos movimento. As imagens e vídeos de cada projeto são lidos sozinhos da pasta dele, e cada projeto tem a própria prévia ao ser compartilhado. Projetos sob NDA aparecem só em texto, com uma capa padrão.",
+    },
     links: [{ label: "GitHub", href: "https://github.com/zecazeco/portfolio" }],
   },
   {
