@@ -4,8 +4,6 @@
 
 Portfólio de Creative Developer: realidade aumentada, realidade virtual, 3D na web, front-end e jogos.
 
-> 🚧 Em construção.
-
 ## O que tem aqui
 
 Um banco único de projetos, com tags por área, e uma página para cada área:

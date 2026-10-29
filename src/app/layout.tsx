@@ -13,6 +13,18 @@ export const metadata: Metadata = {
   // Not indexed: also sent as X-Robots-Tag by Netlify
   robots: { index: false, follow: false, nocache: true },
   icons: { icon: { url: "/jlhaas/icon.svg", type: "image/svg+xml" } },
+  // Link preview (LinkedIn, WhatsApp, X): contour lines from the hero shader with the name
+  metadataBase: new URL("https://vangrog.com"),
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/jlhaas/",
+    siteName: "José Luís Haas",
+    title: "José Luís Haas — Creative Developer",
+    description: "Portfólio de José Luís Haas: realidade aumentada, realidade virtual, 3D na web, front-end e jogos.",
+    images: [{ url: "/jlhaas/og.png", width: 1200, height: 627, alt: "José Luís Haas, Creative Developer" }],
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
