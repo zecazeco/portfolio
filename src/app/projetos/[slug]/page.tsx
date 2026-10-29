@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Cover } from "@/components/ProjectCard";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { projectMedia } from "@/data/media";
 import { getProject, publishedProjects, type CaseStudy } from "@/data/projects";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -18,11 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject((await params).slug);
   if (!project) return {};
   const title = `${project.title} — José Luís Haas`;
+  const { cover } = projectMedia(project.slug);
   // Link preview uses the project cover; NDA or no cover falls back to the site-wide og.png
   // (openGraph here replaces the layout's whole object, so the fallback must be repeated)
   const image =
-    project.cover && !project.nda
-      ? { url: `/jlhaas${project.cover}`, alt: project.title }
+    cover && !project.nda
+      ? { url: `/jlhaas${cover}`, alt: project.title }
       : { url: "/jlhaas/og.png", width: 1200, height: 627, alt: "José Luís Haas, Creative Developer" };
   return {
     title,
@@ -51,6 +53,7 @@ export default async function ProjectPage({ params }: Props) {
   const project = getProject((await params).slug);
   if (!project) notFound();
   const cs = project.caseStudy ?? {};
+  const { gallery } = projectMedia(project.slug);
 
   return (
     <>
@@ -82,11 +85,11 @@ export default async function ProjectPage({ params }: Props) {
                   <p>{cs[s.key]}</p>
                 </section>
               ))}
-            {!project.nda && project.gallery && project.gallery.length > 0 && (
+            {!project.nda && gallery.length > 0 && (
               <section>
                 <h2>Galeria</h2>
                 <div className="gallery">
-                  {project.gallery.map((m) =>
+                  {gallery.map((m) =>
                     m.type === "video" ? (
                       <video key={m.src} src={`/jlhaas${m.src}`} autoPlay muted loop playsInline controls preload="metadata" />
                     ) : (

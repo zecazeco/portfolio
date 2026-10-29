@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { projectMedia } from "@/data/media";
 import type { Project } from "@/data/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -24,9 +25,11 @@ export function ProjectCard({ project }: { project: Project }) {
 }
 
 export function Cover({ project }: { project: Project }) {
-  // NDA projects never show images; projects without a cover get a placeholder
-  if (project.cover && !project.nda) {
-    return <img className="cover" src={`/jlhaas${project.cover}`} width={1280} height={720} alt="" loading="lazy" />;
+  // NDA projects never show images; projects without a cover get a placeholder.
+  // Read on every render so a new media folder shows up without restarting the dev server.
+  const { cover } = projectMedia(project.slug);
+  if (cover && !project.nda) {
+    return <img className="cover" src={`/jlhaas${cover}`} width={1280} height={720} alt="" loading="lazy" />;
   }
   return (
     <div className="cover cover-placeholder" aria-hidden="true">
