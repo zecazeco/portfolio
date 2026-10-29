@@ -18,7 +18,7 @@ export const vitrines: Vitrine[] = [
     label: "Geral",
     title: "Creative Developer",
     intro:
-      "Desenvolvedor criativo trabalhando com tecnologia desde 2005. Crio experiências interativas para web, realidade aumentada e realidade virtual, com Three.js, 8th Wall, Unity e shaders, para marcas como Netflix, TikTok, Formula E e Walmart.",
+      "Desenvolvedor criativo trabalhando com tecnologia desde 2005. Crio experiências interativas para web, realidade aumentada e realidade virtual, com Three.js, 8th Wall, Unity e shaders, para marcas como Netflix, TikTok, Formula E, John Deere e Walmart.",
     areas: ["xr", "web3d", "frontend", "games", "visuals"],
     order: ["meta-xr-hackathon-2021", "meta-storytelling-ar-2023", "word-fleet", "guided-by-nothing"],
   },

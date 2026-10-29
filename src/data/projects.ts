@@ -76,6 +76,22 @@ export const projects: Project[] = [
     ],    
   },
   {
+    slug: "ancap-vr-treinamento",
+    title: "Treinamento em VR — Ancap",
+    summary: "Treinamento em realidade virtual para os colaboradores dos postos da Ancap, no Uruguai, feito em Unity para Meta Quest.",
+    year: "2023",
+    areas: ["xr"],
+    stack: ["Unity", "C#", "Meta Quest"],
+    clients: ["Ancap"],
+    caseStudy: {
+      contexto:
+        "Projeto da Govak Reality para a Ancap, rede de postos de combustível do Uruguai, que precisava treinar os colaboradores nas situações do dia a dia dos postos.",
+      papel: "Fiquei com a programação, as interações e a arquitetura da experiência. Os modelos 3D foram feitos por outra pessoa da equipe.",
+      solucao:
+        "Uma experiência em VR, criada em Unity para Meta Quest, que simula essas situações de forma prática e interativa, para o colaborador aprender fazendo. O foco não foi o realismo extremo dos gráficos, e sim a clareza, a usabilidade e a eficiência em transmitir o conteúdo.",
+    },
+  },
+  {
     slug: "word-fleet",
     title: "Word Fleet",
     summary: "Batalha naval encontra Wordle: game multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
