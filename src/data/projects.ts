@@ -160,11 +160,38 @@ export const projects: Project[] = [
   {
     slug: "lista-campeonatos",
     title: "Lista de campeonatos",
-    summary: "Aplicação em React e TypeScript com testes.",
-    year: "",
+    summary: "Aplicação em React e TypeScript que lista campeonatos, times e confrontos, com testes por componente.",
+    year: "2021",
     areas: ["frontend"],
-    stack: ["React", "TypeScript", "Jest", "Testing Library"],
-    draft: true, // TODO: consertar a demo (backend no Heroku fora do ar)
+    stack: ["React", "TypeScript", "React Router", "Jest", "Testing Library"],
+    caseStudy: {
+      ideia:
+        "Começou em 2021 como um estudo de React e TypeScript: uma aplicação que lista campeonatos, os times de cada um e os confrontos entre eles. Em 2026 voltei ao projeto: a API original tinha saído do ar, então troquei por um backend simulado, refiz o layout com CSS próprio no lugar do Material UI e coloquei a demo de volta no ar.",
+      comoFunciona:
+        "São três telas com React Router: campeonatos, confrontos e times de cada campeonato. Os dados passam por um hook genérico, o useApi, que cuida dos estados de carregando, erro e lista vazia. O backend simulado responde às mesmas rotas da API antiga, com um pequeno atraso, e as telas funcionam como se falassem com um servidor de verdade. Cada componente tem testes com Jest e Testing Library, e a demo é publicada no GitHub Pages.",
+    },
+    links: [
+      { label: "Ver demo", href: "https://zecazeco.github.io/lista-campeonatos/" },
+      { label: "GitHub", href: "https://github.com/zecazeco/lista-campeonatos" },
+    ],
+  },
+  {
+    slug: "troca-criptos",
+    title: "Troca Criptos",
+    summary: "Compara criptomoedas com o bitcoin e o ethereum ao longo do tempo para mostrar o melhor momento de troca.",
+    year: "2022",
+    areas: ["frontend"],
+    stack: ["React", "TypeScript", "Vite", "Recharts", "Vitest"],
+    caseStudy: {
+      ideia:
+        "Eu tinha algumas criptomoedas menores e queria saber quando valia mais a pena trocá-las por bitcoin ou ethereum. Para isso, o que importa não é o preço em dólar, e sim quanto cada moeda vale em BTC ou ETH comparado com o próprio histórico. A primeira versão foi um app em React Native com Firebase, em 2022; em 2026 refiz o projeto como aplicação web em React e Vite.",
+      comoFunciona:
+        "Para cada moeda, o app mostra quanto ela vale hoje em BTC e em ETH e em quantos % dos dias do período ela valia menos do que hoje. Quando esse percentil passa do limite escolhido, aparece o sinal de bom momento para trocar. Os dados vêm das APIs públicas da Binance e da CoinGecko, com cache no navegador, e a lista de moedas fica salva só no navegador, sem servidor nem login. Os cálculos têm testes com Vitest. O sinal é só uma comparação com o histórico, não uma recomendação de investimento.",
+    },
+    links: [
+      { label: "Ver demo", href: "https://zecazeco.github.io/troca-criptos/" },
+      { label: "GitHub", href: "https://github.com/zecazeco/troca-criptos" },
+    ],
   },
   {
     slug: "touchdesigner",
