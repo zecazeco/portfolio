@@ -42,12 +42,12 @@ Cada projeto lê sozinho a pasta `public/midia/<slug>/`, em que o `<slug>` é o 
 
 ```
 public/midia/word-fleet/
-  capa.webp       → capa do card e do topo da página (16:9, ex.: 1280×720)
+  cover.webp      → capa do card e do topo da página (16:9, ex.: 1280×720)
   01-jogo.webp    → galeria, na ordem do nome
   02-demo.mp4     → vídeo: toca em loop, sem som
 ```
 
-- A capa pode se chamar `capa.*` ou `cover.*`. Sem nenhuma das duas, a primeira imagem da pasta vira a capa. A capa precisa ser imagem.
+- Sem `cover.*`, a primeira imagem da pasta vira a capa. A capa precisa ser imagem.
 - A galeria aparece quando a pasta tem mais de um arquivo.
 - Formatos: `webp`, `avif`, `jpg`, `png` e `gif` para imagens, `mp4` e `webm` para vídeos.
 - Projetos com `nda: true` nunca mostram mídia, mesmo com arquivos na pasta.
