@@ -1,6 +1,8 @@
 // Banco único de projetos. Cada projeto é cadastrado uma vez e aparece
 // nas vitrines (src/data/vitrines.ts) conforme as áreas dele.
 
+import { projectMedia, type Media } from "./media";
+
 export type Area = "xr" | "web3d" | "frontend" | "games" | "visuals";
 
 export type CaseStudy = {
@@ -24,8 +26,9 @@ export type Project = {
   badge?: string;
   /** Sob NDA: aparece só em texto, sem imagens nem vídeos */
   nda?: boolean;
-  /** Caminho em /public, ex.: "/img/word-fleet.webp" */
+  /** Preenchidos sozinhos a partir de public/midia/<slug>/ */
   cover?: string;
+  gallery?: Media[];
   links?: { label: string; href: string }[];
   caseStudy?: CaseStudy;
   /** Rascunho: fica fora das vitrines até ter conteúdo */
@@ -174,7 +177,8 @@ export const projects: Project[] = [
   },
 ];
 
-export const publishedProjects = projects.filter((p) => !p.draft);
+// Capa e galeria vêm da pasta public/midia/<slug>/ (ver media.ts)
+export const publishedProjects = projects.filter((p) => !p.draft).map((p) => ({ ...p, ...projectMedia(p.slug) }));
 
 export function getProject(slug: string) {
   return publishedProjects.find((p) => p.slug === slug);

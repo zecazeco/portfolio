@@ -336,6 +336,21 @@ section {
 	margin-bottom: 32px;
 }
 
+/* Images and videos beyond the cover, in file-name order */
+.gallery {
+	display: grid;
+	gap: 16px;
+}
+
+.gallery img,
+.gallery video {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: var(--radius);
+	background: var(--surface);
+}
+
 .project-body aside h3 {
 	font-size: 1rem;
 	margin-top: 1.5rem;
