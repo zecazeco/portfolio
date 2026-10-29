@@ -4,7 +4,7 @@ export const profile = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/joseluishaas" },
     { label: "GitHub", href: "https://github.com/zecazeco" },
     { label: "Instagram @zeco.lab", href: "https://www.instagram.com/zeco.lab" },
-    { label: "Vangrog", href: "https://vangrog.com" },
+    { label: "VanGrog", href: "https://vangrog.com" },
   ],
   awards: [
     "Vencedor do Meta XR Hackathon 2021 — melhor filtro de AR da América Latina",

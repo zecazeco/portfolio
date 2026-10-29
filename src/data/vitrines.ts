@@ -27,7 +27,7 @@ export const vitrines: Vitrine[] = [
     label: "XR & Games",
     title: "XR & Unity Developer",
     intro:
-      "Desenvolvo realidade aumentada e virtual desde 2020: filtros para Instagram, TikTok e Snapchat, WebAR com 8th Wall e VR para Meta Quest em Unity, para marcas como TikTok, Netflix, Vivo e John Deere. Também crio jogos no meu estúdio, a Vangrog.",
+      "Desenvolvo realidade aumentada e virtual desde 2020: filtros para Instagram, TikTok e Snapchat, WebAR com 8th Wall e VR para Meta Quest em Unity, para marcas como TikTok, Netflix, Vivo e John Deere. Também crio jogos no meu estúdio, a VanGrog.",
     areas: ["xr", "web3d", "games"],
     order: ["meta-xr-hackathon-2021", "vr-meta-quest", "filtros-ar-marcas", "webar-3d", "guided-by-nothing"],
   },
