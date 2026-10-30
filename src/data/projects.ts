@@ -141,6 +141,21 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "rayhelper",
+    title: "RayHelper",
+    summary: "Protótipo em AR que ajuda pessoas com deficiência visual a se locomover, com um aviso sonoro quando há um obstáculo no caminho.",
+    year: "2022",
+    areas: ["xr"],
+    stack: ["Unity", "C#", "Niantic Lightship"],
+    badge: "Protótipo",
+    caseStudy: {
+      ideia:
+        "Um protótipo de ferramenta para ajudar pessoas com algum tipo de deficiência visual a se locomover, avisando quando um obstáculo entra no caminho.",
+      comoFunciona:
+        "O Real Time Meshing do Lightship cria as malhas 3D do ambiente em tempo real: basta apontar a câmera para os objetos. Sobre essas malhas, raycasts na Unity rastreiam nove posições ao redor da câmera, e um sinal sonoro avisa quando algum obstáculo entra no caminho da pessoa.",
+    },
+  },
+  {
     slug: "word-fleet",
     title: "Word Fleet",
     summary: "Batalha naval encontra Wordle: game multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
