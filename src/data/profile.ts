@@ -1,5 +1,3 @@
-import type { Area } from "./projects";
-
 export const profile = {
   name: "José Luís Haas",
   links: [
@@ -14,11 +12,10 @@ export const profile = {
     "Láurea Acadêmica — FTEC 2012",
   ],
   // Trabalhos pela Govak Reality (2023–2026), muitos sob NDA: aparecem só como nomes.
-  // Cada vitrine mostra os grupos das áreas dela.
+  // A mesma lista aparece em todas as vitrines.
   clients: [
     {
       label: "Filtros de AR (Instagram, TikTok, Snapchat)",
-      areas: ["xr"],
       names: [
         "TikTok UK",
         "Netflix UK",
@@ -32,13 +29,11 @@ export const profile = {
     },
     {
       label: "WebAR e 3D na web",
-      areas: ["xr", "web3d"],
       names: ["Formula E", "Walmart", "Petition for Rehab"],
     },
     {
       label: "VR para Meta Quest",
-      areas: ["xr"],
       names: ["Vivo", "John Deere", "Ancap (Uruguai)"],
     },
-  ] satisfies { label: string; areas: Area[]; names: string[] }[],
+  ] satisfies { label: string; names: string[] }[],
 };

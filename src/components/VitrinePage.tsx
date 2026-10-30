@@ -7,7 +7,6 @@ import { SiteHeader } from "./SiteHeader";
 
 export function VitrinePage({ vitrine }: { vitrine: Vitrine }) {
   const list = projectsFor(vitrine);
-  const clients = profile.clients.filter((c) => c.areas.some((a) => vitrine.areas.includes(a)));
   return (
     <>
       <SiteHeader active={vitrine.slug} />
@@ -35,12 +34,12 @@ export function VitrinePage({ vitrine }: { vitrine: Vitrine }) {
           </div>
         </section>
 
-        {clients.length > 0 && (
+        {profile.clients.length > 0 && (
           <section>
             <h2>Clientes</h2>
             <p className="muted">Pela Govak Reality, de 2023 a 2026.*</p>
             <ul className="list">
-              {clients.map((c) => (
+              {profile.clients.map((c) => (
                 <li key={c.label}>
                   <strong>{c.label}:</strong> {c.names.join(", ")}
                 </li>

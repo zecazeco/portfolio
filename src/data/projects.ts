@@ -176,6 +176,7 @@ export const projects: Project[] = [
   {
     slug: "jovem-guerreiro",
     title: "Aventura Solo — Jovem Guerreiro",
+    draft: true, // fora do portfólio por enquanto; a página fica em vangrog.com
     summary: "Aventura em texto escrita aos 14 anos, virou jogo web com motor open source para criar novas aventuras.",
     year: "2021",
     areas: ["games", "frontend"],
@@ -259,13 +260,18 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "touchdesigner",
-    title: "Live visuals em TouchDesigner",
-    summary: "Visuais interativos e audiorreativos.",
-    year: "",
+    slug: "formigas-musica",
+    title: "Formigas podem fazer música?",
+    summary: "Sonificação de uma trilha de formigas: o movimento delas vira notas, e cada cor de folha toca um instrumento.",
+    year: "2026",
     areas: ["visuals"],
     stack: ["TouchDesigner"],
-    draft: true, // TODO: vídeos
+    caseStudy: {
+      ideia:
+        "Uma pergunta simples: dá para transformar o movimento das formigas em música? Foi também a minha primeira experiência com TouchDesigner.",
+      comoFunciona:
+        "Peguei o vídeo de uma trilha de formigas e isolei as formigas e as folhas na imagem. O movimento delas vira notas, e cada cor de folha foi associada a um instrumento diferente. O resultado é uma pequena sonificação do movimento das formigas.",
+    },
   },
 ];
 
