@@ -4,7 +4,7 @@ import type { Project } from "@/data/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link href={`/projetos/${project.slug}/`} className="card">
+    <Link href={`/projetos/${project.slug}/`} className="card" data-areas={project.areas.join(" ")}>
       <Cover project={project} />
       <div className="card-body">
         <p className="eyebrow">

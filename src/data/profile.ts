@@ -12,7 +12,6 @@ export const profile = {
     "Láurea Acadêmica — FTEC 2012",
   ],
   // Trabalhos pela Govak Reality (2023–2026), muitos sob NDA: aparecem só como nomes.
-  // A mesma lista aparece em todas as vitrines.
   clients: [
     {
       label: "Filtros de AR (Instagram, TikTok, Snapchat)",

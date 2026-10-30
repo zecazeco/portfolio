@@ -114,20 +114,39 @@ section {
 	font-weight: 700;
 }
 
-.site-header nav {
+/* "Projetos" title with the area filters on the right (wrapping below it on mobile) */
+.section-head {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 16px;
+	gap: 8px 24px;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: .75rem;
 }
 
-.site-header nav a {
-	text-decoration: none;
+.section-head h2 {
+	margin: 0;
+}
+
+.filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 16px;
+	font-size: .9rem;
+}
+
+.filters button {
+	padding: 4px 0;
+	border: 0;
+	background: none;
+	font: inherit;
 	color: var(--muted);
+	cursor: pointer;
 }
 
 /* The accent is too light for text on white, so it underlines instead */
-.site-header nav a:hover,
-.site-header nav a[aria-current="page"] {
+.filters button:hover,
+.filters button[aria-pressed="true"] {
 	color: var(--text);
 	text-decoration: underline;
 	text-decoration-color: var(--accent);

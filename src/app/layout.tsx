@@ -29,7 +29,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={mono.variable}>
+    // data-filter on <html> is set before hydration by the home page script (HomePage.tsx)
+    <html lang="pt-BR" className={mono.variable} suppressHydrationWarning>
       <body>
         {children}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />

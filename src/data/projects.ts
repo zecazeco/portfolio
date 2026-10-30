@@ -1,5 +1,5 @@
-// Banco único de projetos. Cada projeto é cadastrado uma vez e aparece
-// nas vitrines (src/data/vitrines.ts) conforme as áreas dele.
+// Banco único de projetos. A home lista nesta ordem, e os filtros
+// (src/data/areas.ts) mostram só os projetos de cada área.
 // Capa e galeria vêm da pasta public/midia/<slug>/ (ver media.ts).
 
 export type Area = "xr" | "web3d" | "frontend" | "games" | "visuals";
@@ -30,7 +30,7 @@ export type Project = {
   nda?: boolean;
   links?: { label: string; href: string }[];
   caseStudy?: CaseStudy;
-  /** Rascunho: fica fora das vitrines até ter conteúdo */
+  /** Rascunho: fica fora do site até ter conteúdo */
   draft?: boolean;
 };
 
@@ -90,23 +90,7 @@ export const projects: Project[] = [
       solucao:
         "Uma experiência em VR, criada em Unity para Meta Quest, que simula essas situações de forma prática e interativa, para o colaborador aprender fazendo. O foco não foi o realismo extremo dos gráficos, e sim a clareza, a usabilidade e a eficiência em transmitir o conteúdo.",
     },
-  },
-  {
-    slug: "john-deere-vr-lancamento",
-    title: "Lançamento em VR — John Deere",
-    summary: "Experiência em VR para o lançamento de um novo produto da John Deere em uma feira, com a máquina trabalhando no meio da plantação.",
-    year: "2026",
-    areas: ["xr"],
-    stack: ["Unity", "C#", "Meta Quest"],
-    clients: ["John Deere"],
-    nda: true,
-    caseStudy: {
-      contexto: "Projeto da Govak Reality para a John Deere: o lançamento de um novo produto em uma feira.",
-      papel: "Fiquei com a programação e as interações da experiência. Os modelos 3D foram feitos por outra pessoa da equipe.",
-      solucao:
-        "Uma experiência em VR, criada em Unity para Meta Quest, que coloca o visitante no meio de uma plantação com o novo produto trabalhando. Animações, destaques e cards explicativos apresentam cada melhoria do produto.",
-    },
-  },
+  },  
   {
     slug: "formula-e-gen3",
     title: "Quiz 3D Gen3 — Formula E",
@@ -122,6 +106,25 @@ export const projects: Project[] = [
       solucao:
         "Um jogo 3D com quiz, feito em Three.js com Vue e Vite, que roda direto no navegador com renderização de alta qualidade, sem precisar baixar nada.",
     },
+  },  
+  {
+    slug: "word-fleet",
+    title: "Word Fleet",
+    summary: "Batalha naval encontra Wordle: game multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
+    year: "2026",
+    areas: ["games", "frontend"],
+    stack: ["Vue", "Firebase"], 
+    badge: "Beta",
+    caseStudy: {
+      ideia:
+        "Planejei e comecei o Word Fleet há dois anos, para testar a sincronização em tempo real do Firestore do Firebase. Agora, com a ajuda de IA, terminei o jogo e lancei pela VanGrog, o meu estúdio independente.",
+      comoFunciona:
+        "Cada jogador esconde três palavras secretas, de 3, 4 e 5 letras, num tabuleiro de 10×10. Na sua vez, escolhe uma casa e uma letra, e a cor da resposta (verde, amarelo, roxo ou cinza) serve de pista. Vence quem encontrar primeiro as 12 letras do adversário. Não há servidor nem funções na nuvem: os dois navegadores sincronizam a partida direto pelo Firestore, e para convidar alguém basta mandar o link, sem criar conta.",
+    },
+    links: [
+      { label: "Jogar", href: "https://wordfleet.vangrog.com/" },
+      { label: "Página do jogo", href: "https://vangrog.com/games/word-fleet/" },
+    ],
   },
   {
     slug: "pinterest-cats-crochet-hats",
@@ -156,30 +159,27 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "word-fleet",
-    title: "Word Fleet",
-    summary: "Batalha naval encontra Wordle: game multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
+    slug: "john-deere-vr-lancamento",
+    title: "Lançamento em VR — John Deere",
+    summary: "Experiência em VR para o lançamento de um novo produto da John Deere em uma feira, com a máquina trabalhando no meio da plantação.",
     year: "2026",
-    areas: ["games", "frontend"],
-    stack: ["Vue", "Firebase"], 
-    badge: "Beta",
+    areas: ["xr"],
+    stack: ["Unity", "C#", "Meta Quest"],
+    clients: ["John Deere"],
+    nda: true,
     caseStudy: {
-      ideia:
-        "Planejei e comecei o Word Fleet há dois anos, para testar a sincronização em tempo real do Firestore do Firebase. Agora, com a ajuda de IA, terminei o jogo e lancei pela VanGrog, o meu estúdio independente.",
-      comoFunciona:
-        "Cada jogador esconde três palavras secretas, de 3, 4 e 5 letras, num tabuleiro de 10×10. Na sua vez, escolhe uma casa e uma letra, e a cor da resposta (verde, amarelo, roxo ou cinza) serve de pista. Vence quem encontrar primeiro as 12 letras do adversário. Não há servidor nem funções na nuvem: os dois navegadores sincronizam a partida direto pelo Firestore, e para convidar alguém basta mandar o link, sem criar conta.",
+      contexto: "Projeto da Govak Reality para a John Deere: o lançamento de um novo produto em uma feira.",
+      papel: "Fiquei com a programação e as interações da experiência. Os modelos 3D foram feitos por outra pessoa da equipe.",
+      solucao:
+        "Uma experiência em VR, criada em Unity para Meta Quest, que coloca o visitante no meio de uma plantação com o novo produto trabalhando. Animações, destaques e cards explicativos apresentam cada melhoria do produto.",
     },
-    links: [
-      { label: "Jogar", href: "https://wordfleet.vangrog.com/" },
-      { label: "Página do jogo", href: "https://vangrog.com/games/word-fleet/" },
-    ],
-  },
+  },  
   {
     slug: "guided-by-nothing",
     title: "Guided by Nothing",
     summary: "Jogo de exploração para PC: sem mapa, sem guia, ninguém dizendo para onde ir.",
     year: "2026",
-    areas: ["games", "xr"],
+    areas: ["games"],
     stack: ["Unity", "C#"],
     badge: "Em desenvolvimento",
     caseStudy: {
@@ -187,74 +187,6 @@ export const projects: Project[] = [
         "Um jogo sobre caminhar e lembrar. O jogador é um viajante solitário que atravessa um mundo silencioso, guiado só pelo rumo e pelas próprias sensações, sem mapa e sem destino final.",
     },
     links: [{ label: "Página do jogo", href: "https://vangrog.com/games/guided-by-nothing/" }],
-  },
-  {
-    slug: "jovem-guerreiro",
-    title: "Aventura Solo — Jovem Guerreiro",
-    draft: true, // fora do portfólio por enquanto; a página fica em vangrog.com
-    summary: "Aventura em texto escrita aos 14 anos, virou jogo web com motor open source para criar novas aventuras.",
-    year: "2021",
-    areas: ["games", "frontend"],
-    stack: ["JavaScript", "HTML/CSS"],
-    badge: "Open source",
-    caseStudy: {
-      ideia:
-        "Aventura solo em texto escrita em 1999, quando eu tinha 14 anos, e publicada sem edições. Por trás do jogo há um sistema simples e de código aberto, feito só com HTML, CSS e JavaScript. Basta copiar o projeto e escrever suas cenas e escolhas em um único arquivo.",
-    },    
-    links: [
-      { label: "Página do jogo", href: "https://vangrog.com/games/jovem-guerreiro/" },
-      { label: "GitHub", href: "https://github.com/zecazeco/aventura-solo-jovem-guerreiro" },
-      { label: "Jogar", href: "https://zecazeco.github.io/aventura-solo-jovem-guerreiro/" },
-    ],
-  },
-  {
-    slug: "app-controle-de-vendas",
-    title: "App de controle de vendas",
-    summary: "App Android de controle de caixa para uma padaria, em uso diário desde 2021 sem precisar de manutenção.",
-    year: "2021",
-    areas: ["frontend"],
-    stack: ["Angular", "Ionic", "Firebase"],
-    nda: true,
-    caseStudy: {
-      contexto:
-        "Uma padaria precisava de um registro simples do caixa: quanto entrava a cada dia e quanto saía em pagamentos a fornecedores.",
-      solucao:
-        "Um app Android, feito em Angular e Ionic, em que os operadores lançam as entradas do caixa e as compras de produtos. Os lançamentos ficam salvos no Firebase, e o dono passa a ter um histórico de todo o movimento.",
-      resultado: "Em uso diário desde 2021, sem precisar de manutenção.",
-    },
-  },
-  {
-    slug: "portfolio",
-    title: "Este portfólio",
-    summary: "Site estático em Next.js com um banco único de projetos, uma vitrine para cada área e um shader de curvas de nível no topo.",
-    year: "2026",
-    areas: ["frontend"],
-    stack: ["Next.js", "React", "TypeScript", "Three.js"],
-    caseStudy: {
-      ideia:
-        "Um portfólio que se adapta à vaga. Cada projeto é cadastrado uma vez, com as áreas a que pertence, e aparece nas vitrines certas: geral, XR & Games e Front-end. Assim cada vaga recebe um link focado no que importa para ela. Desenvolvido com apoio de IA, com a arquitetura e as decisões de design definidas por mim.",
-      comoFunciona:
-        "O site é gerado como HTML estático em Next.js e TypeScript e publicado na Netlify, em vangrog.com/jlhaas. No topo, um shader em Three.js desenha curvas de nível que se curvam em volta do mouse. Ele roda a no máximo 30 fps, só enquanto está visível na tela, e mostra um quadro parado em celulares ou para quem prefere menos movimento. As imagens e vídeos de cada projeto são lidos sozinhos da pasta dele, e cada projeto tem a própria prévia ao ser compartilhado. Projetos sob NDA aparecem só em texto, com uma capa padrão.",
-    },
-    links: [{ label: "GitHub", href: "https://github.com/zecazeco/portfolio" }],
-  },
-  {
-    slug: "lista-campeonatos",
-    title: "Lista de campeonatos",
-    summary: "Aplicação em React e TypeScript que lista campeonatos, times e confrontos, com testes por componente.",
-    year: "2021",
-    areas: ["frontend"],
-    stack: ["React", "TypeScript", "React Router", "Jest", "Testing Library"],
-    caseStudy: {
-      ideia:
-        "Começou em 2021 como um estudo de React e TypeScript: uma aplicação que lista campeonatos, os times de cada um e os confrontos entre eles. Em 2026 voltei ao projeto: a API original tinha saído do ar, então troquei por um backend simulado, refiz o layout com CSS próprio no lugar do Material UI e coloquei a demo de volta no ar.",
-      comoFunciona:
-        "São três telas com React Router: campeonatos, confrontos e times de cada campeonato. Os dados passam por um hook genérico, o useApi, que cuida dos estados de carregando, erro e lista vazia. O backend simulado responde às mesmas rotas da API antiga, com um pequeno atraso, e as telas funcionam como se falassem com um servidor de verdade. Cada componente tem testes com Jest e Testing Library, e a demo é publicada no GitHub Pages.",
-    },
-    links: [
-      { label: "Ver demo", href: "https://zecazeco.github.io/lista-campeonatos/" },
-      { label: "GitHub", href: "https://github.com/zecazeco/lista-campeonatos" },
-    ],
   },
   {
     slug: "troca-criptos",
@@ -275,6 +207,40 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "app-controle-de-vendas",
+    title: "App de controle de vendas",
+    summary: "App Android de controle de caixa para uma padaria, em uso diário desde 2021 sem precisar de manutenção.",
+    year: "2021",
+    areas: ["frontend"],
+    stack: ["Angular", "Ionic", "Firebase"],
+    nda: true,
+    caseStudy: {
+      contexto:
+        "Uma padaria precisava de um registro simples do caixa: quanto entrava a cada dia e quanto saía em pagamentos a fornecedores.",
+      solucao:
+        "Um app Android, feito em Angular e Ionic, em que os operadores lançam as entradas do caixa e as compras de produtos. Os lançamentos ficam salvos no Firebase, e o dono passa a ter um histórico de todo o movimento.",
+      resultado: "Em uso diário desde 2021, sem precisar de manutenção.",
+    },
+  },  
+  {
+    slug: "lista-campeonatos",
+    title: "Lista de campeonatos",
+    summary: "Aplicação em React e TypeScript que lista campeonatos, times e confrontos, com testes por componente.",
+    year: "2021",
+    areas: ["frontend"],
+    stack: ["React", "TypeScript", "React Router", "Jest", "Testing Library"],
+    caseStudy: {
+      ideia:
+        "Começou em 2021 como um estudo de React e TypeScript: uma aplicação que lista campeonatos, os times de cada um e os confrontos entre eles. Em 2026 voltei ao projeto: a API original tinha saído do ar, então troquei por um backend simulado, refiz o layout com CSS próprio no lugar do Material UI e coloquei a demo de volta no ar.",
+      comoFunciona:
+        "São três telas com React Router: campeonatos, confrontos e times de cada campeonato. Os dados passam por um hook genérico, o useApi, que cuida dos estados de carregando, erro e lista vazia. O backend simulado responde às mesmas rotas da API antiga, com um pequeno atraso, e as telas funcionam como se falassem com um servidor de verdade. Cada componente tem testes com Jest e Testing Library, e a demo é publicada no GitHub Pages.",
+    },
+    links: [
+      { label: "Ver demo", href: "https://zecazeco.github.io/lista-campeonatos/" },
+      { label: "GitHub", href: "https://github.com/zecazeco/lista-campeonatos" },
+    ],
+  },  
+  {
     slug: "formigas-musica",
     title: "Formigas podem fazer música?",
     summary: "Sonificação de uma trilha de formigas: o movimento delas vira notas, e cada cor de folha toca um instrumento.",
@@ -288,6 +254,40 @@ export const projects: Project[] = [
         "Peguei o vídeo de uma trilha de formigas e isolei as formigas e as folhas na imagem. O movimento delas vira notas, e cada cor de folha foi associada a um instrumento diferente. O resultado é uma pequena sonificação do movimento das formigas.",
     },
   },
+  {
+    slug: "portfolio",
+    title: "Este portfólio",
+    summary: "Site estático em Next.js com um banco único de projetos, uma vitrine para cada área e um shader de curvas de nível no topo.",
+    year: "2026",
+    areas: ["frontend", "web3d"],
+    stack: ["Next.js", "React", "TypeScript", "Three.js"],
+    caseStudy: {
+      ideia:
+        "Um portfólio que se adapta à vaga. Cada projeto é cadastrado uma vez, com as áreas a que pertence, e a lista pode ser filtrada por área: XR, games, WebGL, front-end e visuals. O filtro vai junto no link, como em vangrog.com/jlhaas/?front, e cada vaga recebe um link focado no que importa para ela. Desenvolvido com apoio de IA, com a arquitetura e as decisões de design definidas por mim.",
+      comoFunciona:
+        "O site é gerado como HTML estático em Next.js e TypeScript e publicado na Netlify, em vangrog.com/jlhaas. No topo, um shader em Three.js desenha curvas de nível que se curvam em volta do mouse. Ele roda a no máximo 30 fps, só enquanto está visível na tela, e mostra um quadro parado em celulares ou para quem prefere menos movimento. As imagens e vídeos de cada projeto são lidos sozinhos da pasta dele, e cada projeto tem a própria prévia ao ser compartilhado. Projetos sob NDA aparecem só em texto, com uma capa padrão.",
+    },
+    links: [{ label: "GitHub", href: "https://github.com/zecazeco/portfolio" }],
+  }, 
+  {
+    slug: "jovem-guerreiro",
+    title: "Aventura Solo — Jovem Guerreiro",
+    draft: true, // fora do portfólio por enquanto; a página fica em vangrog.com
+    summary: "Aventura em texto escrita aos 14 anos, virou jogo web com motor open source para criar novas aventuras.",
+    year: "2021",
+    areas: ["games", "frontend"],
+    stack: ["JavaScript", "HTML/CSS"],
+    badge: "Open source",
+    caseStudy: {
+      ideia:
+        "Aventura solo em texto escrita em 1999, quando eu tinha 14 anos, e publicada sem edições. Por trás do jogo há um sistema simples e de código aberto, feito só com HTML, CSS e JavaScript. Basta copiar o projeto e escrever suas cenas e escolhas em um único arquivo.",
+    },    
+    links: [
+      { label: "Página do jogo", href: "https://vangrog.com/games/jovem-guerreiro/" },
+      { label: "GitHub", href: "https://github.com/zecazeco/aventura-solo-jovem-guerreiro" },
+      { label: "Jogar", href: "https://zecazeco.github.io/aventura-solo-jovem-guerreiro/" },
+    ],
+  },   
 ];
 
 export const publishedProjects = projects.filter((p) => !p.draft);

@@ -6,14 +6,18 @@ Portfólio de Creative Developer: realidade aumentada, realidade virtual, 3D na 
 
 ## O que tem aqui
 
-Um banco único de projetos, com tags por área, e uma página para cada área:
+Um banco único de projetos, com tags por área, numa página só. Botões ao lado do título "Projetos" filtram a lista por área, e o filtro vai junto no link para mandar uma versão focada em cada vaga:
 
-| Página | Foco |
+| Link | Mostra |
 |---|---|
-| [`/jlhaas/`](https://vangrog.com/jlhaas/) | Visão geral: Creative Developer |
-| `/jlhaas/xr` | AR, VR, Unity e jogos |
-| `/jlhaas/frontend` | React, Vue, TypeScript e aplicações web |
-| `/jlhaas/visuals` | Live visuals em TouchDesigner (em breve) |
+| [`/jlhaas/`](https://vangrog.com/jlhaas/) | Todos os projetos: Creative Developer |
+| [`/jlhaas/?xr`](https://vangrog.com/jlhaas/?xr) | AR e VR, com o topo de XR & Unity Developer |
+| [`/jlhaas/?games`](https://vangrog.com/jlhaas/?games) | Jogos |
+| [`/jlhaas/?webgl`](https://vangrog.com/jlhaas/?webgl) | 3D no navegador (Three.js, 8th Wall) |
+| [`/jlhaas/?front`](https://vangrog.com/jlhaas/?front) | Front-end, com o topo de Front-end Developer |
+| [`/jlhaas/?visuals`](https://vangrog.com/jlhaas/?visuals) | Visuais em TouchDesigner |
+
+Os endereços antigos `/jlhaas/xr/` e `/jlhaas/frontend/` redirecionam para `?xr` e `?front`.
 
 Cada projeto vira um estudo de caso curto em `/jlhaas/projetos/<slug>`: contexto, meu papel, desafio técnico, solução, resultado e stack. Projetos sob NDA aparecem só em texto.
 
@@ -34,7 +38,7 @@ npm run build   # gera o site estático em out/
 
 Com `?motion` na URL, o shader anima mesmo com o movimento reduzido ligado no sistema.
 
-Os projetos ficam em [`src/data/projects.ts`](src/data/projects.ts), e as vitrines em [`src/data/vitrines.ts`](src/data/vitrines.ts).
+Os projetos ficam em [`src/data/projects.ts`](src/data/projects.ts), na ordem em que aparecem no site. Os filtros e o texto do topo de cada área ficam em [`src/data/areas.ts`](src/data/areas.ts).
 
 ### Imagens e vídeos
 

@@ -1,6 +1,5 @@
-import { VitrinePage } from "@/components/VitrinePage";
-import { homeVitrine } from "@/data/vitrines";
+import { HomePage } from "@/components/HomePage";
 
 export default function Home() {
-  return <VitrinePage vitrine={homeVitrine} />;
+  return <HomePage />;
 }
