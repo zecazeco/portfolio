@@ -108,6 +108,22 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "formula-e-gen3",
+    title: "Quiz 3D Gen3 — Formula E",
+    summary: "Jogo 3D com quiz no navegador para apresentar o carro Gen3 da Formula E ao público dos autódromos.",
+    year: "2023",
+    areas: ["web3d", "games"],
+    stack: ["Three.js", "Vue", "Vite", "GSAP"],
+    clients: ["Formula E"],
+    caseStudy: {
+      contexto:
+        "Projeto da Govak Reality para a Formula E: apresentar o Gen3, a nova geração do carro, ao público nos autódromos. A experiência premiava os participantes com prêmios exclusivos, produtos autografados e até viagens para corridas futuras.",
+      papel: "Fiquei com a programação e as interações.",
+      solucao:
+        "Um jogo 3D com quiz, feito em Three.js com Vue e Vite, que roda direto no navegador com renderização de alta qualidade, sem precisar baixar nada.",
+    },
+  },
+  {
     slug: "word-fleet",
     title: "Word Fleet",
     summary: "Batalha naval encontra Wordle: game multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
