@@ -92,6 +92,22 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "john-deere-vr-lancamento",
+    title: "Lançamento em VR — John Deere",
+    summary: "Experiência em VR para o lançamento de um novo produto da John Deere em uma feira, com a máquina trabalhando no meio da plantação.",
+    year: "2026",
+    areas: ["xr"],
+    stack: ["Unity", "C#", "Meta Quest"],
+    clients: ["John Deere"],
+    nda: true,
+    caseStudy: {
+      contexto: "Projeto da Govak Reality para a John Deere: o lançamento de um novo produto em uma feira.",
+      papel: "Fiquei com a programação e as interações da experiência. Os modelos 3D foram feitos por outra pessoa da equipe.",
+      solucao:
+        "Uma experiência em VR, criada em Unity para Meta Quest, que coloca o visitante no meio de uma plantação com o novo produto trabalhando. Animações, destaques e cards explicativos apresentam cada melhoria do produto.",
+    },
+  },
+  {
     slug: "word-fleet",
     title: "Word Fleet",
     summary: "Batalha naval encontra Wordle: game multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
