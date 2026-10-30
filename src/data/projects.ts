@@ -124,6 +124,23 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "pinterest-cats-crochet-hats",
+    title: "Cats in Crochet Hats — Pinterest UK",
+    summary: "Filtro de AR para Instagram e TikTok que coloca gatinhos com touquinhas de crochê na câmera, para uma campanha do Pinterest UK.",
+    year: "2024",
+    areas: ["xr"],
+    stack: ["Meta Spark AR", "Effect House"],
+    clients: ["Pinterest UK"],
+    caseStudy: {
+      contexto:
+        "Projeto da Govak Reality para o Pinterest UK: um filtro de AR para uma campanha de marketing, com versões para Instagram e TikTok.",
+      papel:
+        "Fiquei com a programação e a montagem do efeito nas duas plataformas, incluindo a animação dos modelos. Os modelos 3D foram feitos por outra pessoa da equipe.",
+      solucao:
+        "Um efeito que coloca gatinhos com touquinhas de crochê direto na câmera de quem usa. A animação dos gatos é procedural: os bones dos modelos 3D são movidos por código, sem animações prontas.",
+    },
+  },
+  {
     slug: "word-fleet",
     title: "Word Fleet",
     summary: "Batalha naval encontra Wordle: game multiplayer em tempo real no navegador, sem cadastro — é só mandar o link.",
